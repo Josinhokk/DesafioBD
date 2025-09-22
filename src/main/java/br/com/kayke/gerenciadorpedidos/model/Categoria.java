@@ -1,19 +1,21 @@
 package br.com.kayke.gerenciadorpedidos.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 public class Categoria {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-
     private String nome;
 
-    public Categoria() {
+    @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL)
+    private List<Produto> produtos;
 
-    }
+    public Categoria() {}
 
     public long getId() {
         return id;

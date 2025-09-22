@@ -7,7 +7,7 @@ public class Produto {
 
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     @Column(nullable = false, unique = true)
@@ -16,9 +16,11 @@ public class Produto {
     @Column(name = "valor")
     private double preco;
 
-    public Produto() {
+    @ManyToOne
+    @JoinColumn(name = "categoia_id")
+    private Categoria categoria;
 
-    }
+    public Produto() {}
 
 
     public double getPreco() {
