@@ -2,6 +2,8 @@ package br.com.kayke.gerenciadorpedidos.model;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 public class Produto {
 
@@ -20,6 +22,26 @@ public class Produto {
     @JoinColumn(name = "categoia_id")
     private Categoria categoria;
 
+    public void setFornecedor(Fornecedor fornecedor) {
+        this.fornecedor = fornecedor;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
+
+    public void setPreco(double preco) {
+        this.preco = preco;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "fornecedor_id")
+    private Fornecedor fornecedor;
+
     public Produto() {}
 
 
@@ -35,8 +57,9 @@ public class Produto {
         return nome;
     }
 
-    public Produto(String nome, double preco) {
+    public Produto(String nome, double preco, Categoria categoria) {
         this.nome = nome;
         this.preco = preco;
+        this.categoria = categoria;
     }
 }

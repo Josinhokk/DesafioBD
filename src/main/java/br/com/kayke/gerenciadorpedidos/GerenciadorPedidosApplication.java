@@ -13,18 +13,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class GerenciadorPedidosApplication implements CommandLineRunner {
 
     @Autowired
-    private categoriaRepositorio categoriaRepositorio;
-    @Autowired
-    private pedidoRepositorio pedidoRepositorio;
-    @Autowired
-    private produtoRepositorio produtoRepositorio;
+    private Principal principal;
 
     public static void main(String[] args) {
         SpringApplication.run(GerenciadorPedidosApplication.class, args);
     }
 
+
+
     @Override
     public void run(String... args) throws Exception {
-        Principal principal = new Principal(produtoRepositorio);
         principal.teste();
 }}
