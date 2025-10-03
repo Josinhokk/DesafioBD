@@ -1,9 +1,5 @@
 package br.com.kayke.gerenciadorpedidos;
 
-import br.com.kayke.gerenciadorpedidos.model.Produto;
-import br.com.kayke.gerenciadorpedidos.repositorios.categoriaRepositorio;
-import br.com.kayke.gerenciadorpedidos.repositorios.pedidoRepositorio;
-import br.com.kayke.gerenciadorpedidos.repositorios.produtoRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -23,5 +19,5 @@ public class GerenciadorPedidosApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        principal.teste();
+        principal.exibeMenu();
 }}
