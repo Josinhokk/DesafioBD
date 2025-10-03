@@ -47,7 +47,7 @@ public class Principal {
                     0 - Sair                                 
                     """;
             System.out.println(menu);
-            opcao = leitura.nextInt();
+            opcao = Integer.parseInt(leitura.nextLine());
             switch (opcao) {
                 case 1:
                     salvarProdutos();
